@@ -3,15 +3,13 @@
 import React, { useState, ChangeEvent } from 'react';
 import './Pyramid.css';
 
-interface PyramidProps {}
-
-const Pyramid: React.FC<PyramidProps> = () => {
+const Pyramid: React.FC = () => {
   const [boxSize, setBoxSize] = useState<number>(100);
   const [gapSize, setGapSize] = useState<number>(10);
   const [rows, setRows] = useState<number[]>([1, 2, 3, 4, 5]);
 
   const addRow = () => {
-    setRows([...rows, rows.length + 1]);
+    setRows([...rows, rows[rows.length - 1] + 1]);
   };
 
   const addBox = (index: number) => {
@@ -57,28 +55,34 @@ const Pyramid: React.FC<PyramidProps> = () => {
   return (
     <div className="pyramid-container">
       <div className="controls">
-        <label htmlFor="boxSizeSlider">Box Size:</label>
-        <input
-          type="range"
-          id="boxSizeSlider"
-          min="50"
-          max="200"
-          value={boxSize}
-          onChange={handleBoxSizeChange}
-        />
-        <span>{boxSize}px</span>
-        <label htmlFor="gapSizeSlider">Gap Size:</label>
-        <input
-          type="range"
-          id="gapSizeSlider"
-          min="0"
-          max="50"
-          value={gapSize}
-          onChange={handleGapSizeChange}
-        />
-        <span>{gapSize}px</span>
+        <div className="control-group">
+          <label htmlFor="boxSizeSlider">Box Size:</label>
+          <input
+            type="range"
+            id="boxSizeSlider"
+            min="50"
+            max="200"
+            value={boxSize}
+            onChange={handleBoxSizeChange}
+          />
+          <span>{boxSize}px</span>
+        </div>
+        <div className="control-group">
+          <label htmlFor="gapSizeSlider">Gap Size:</label>
+          <input
+            type="range"
+            id="gapSizeSlider"
+            min="0"
+            max="50"
+            value={gapSize}
+            onChange={handleGapSizeChange}
+          />
+          <span>{gapSize}px</span>
+        </div>
       </div>
-      <div className="pyramid">{pyramid}</div>
+      <div className="pyramid">
+        {pyramid}
+      </div>
       <button onClick={addRow} className="add-row-button">+</button>
     </div>
   );

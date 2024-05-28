@@ -1,3 +1,24 @@
+# Pyra-Box: Project Assignment
+
+This project is a responsive web application built with React and TypeScript, created as part of an assignment. The application allows users to create and manage a pyramid of boxes, with features for dynamically adding and removing boxes, adjusting their size, and controlling the gap between them. The design ensures a great user experience on both desktop and mobile devices.
+
+## Project Overview
+
+The objective of this assignment was to develop an interactive and responsive web app that meets the following requirements:
+
+- Users can dynamically add and remove rows of boxes to form a pyramid structure.
+- Users can adjust the size of the boxes and the gaps between them using sliders.
+- The application must be fully responsive, providing a seamless experience on various devices, including desktops and mobile phones.
+
+## Features
+
+- **Dynamic Pyramid Structure**: Add and remove rows and boxes to customize the pyramid.
+- **Box Size Control**: Adjust the box size with a slider.
+- **Gap Control**: Adjust the gap between boxes with a slider.
+- **Responsive Design**: The layout adjusts to different screen sizes, scaling appropriately for mobile devices.
+
+***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
